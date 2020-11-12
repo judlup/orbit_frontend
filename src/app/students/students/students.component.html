@@ -11,7 +11,7 @@
           </div>
           <input type="text" class="form-control" placeholder="Username, First Name, Last Name or Career" aria-label="search" [(ngModel)]="search">
         </div>
-        <button type="button" class="btn btn-outline-info btn-sm btn-add" (click)="open('add')"> <i class="fas fa-user-plus"></i>Add</button>
+        <button type="button" class="btn btn-outline-info btn-sm btn-add" (click)="open('add')"> Add</button>
       </div>
       <hr>
       <div class="scroll">
@@ -19,11 +19,12 @@
       <div *ngFor="let student of students | filterBy : ['username','firstName', 'lastName', 'career'] : search" class="students">
         <div class="card student" >
           <div class="card-body">
-            <h3 class="card-title text-info"><i class="fas fa-user"></i> {{student.username}} <br><small class="text-muted">{{student.firstName}} {{student.lastName}}({{student.age}})</small></h3>
-            <p class="card-text text-muted">Career {{student.career}}</p>
+            <h3 class="card-title text-info"> {{student.username}} <br><small class="text-muted">{{student.firstName}} {{student.lastName}} <br> {{student.age}} years old</small></h3>
+            <p class="card-text text-muted">Career | {{student.career}}</p>
           </div>
           <div class="card-footer">
             <div class="btn-group mr-2" role="group" aria-label="First group">
+              <button type="button" class="btn btn-outline-secondary btn-sm"  (click)="open('see',student)">See</button>
               <button type="button" class="btn btn-outline-secondary btn-sm"  (click)="open('edit',student)">Edit</button>
               <button type="button" class="btn btn-outline-danger btn-sm" (click)="delete(student.id)">Delete</button>
             </div>

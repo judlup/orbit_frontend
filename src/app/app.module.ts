@@ -15,6 +15,7 @@ import {NgPipesModule} from 'ngx-pipes';
 import { StudentsComponent } from './students/students/students.component';
 import { AddStundentComponent } from './students/add-stundent/add-stundent.component';
 import { EditStundentComponent } from './students/edit-stundent/edit-stundent.component';
+import { StudentComponent } from './students/student/student.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { EditStundentComponent } from './students/edit-stundent/edit-stundent.co
     StudentsComponent,
     AddStundentComponent,
     EditStundentComponent,
+    StudentComponent,
   ],
   imports: [
     BrowserModule,

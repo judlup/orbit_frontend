@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { StudentService } from 'src/app/services/student/student.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AddStundentComponent } from '../add-stundent/add-stundent.component';
+import { faStackOverflow, faGithub, faMedium } from '@fortawesome/free-brands-svg-icons';
+import { StudentComponent } from '../student/student.component';
 
 @Component({
   selector: 'app-students',
@@ -14,7 +16,7 @@ export class StudentsComponent implements OnInit {
 
   students:any;
   search: string = '';
-
+  faMedium=faMedium
   constructor(
     private generalService : GeneralService,
     private studentService : StudentService,
@@ -37,6 +39,8 @@ export class StudentsComponent implements OnInit {
       modalRef = this.modalService.open(AddStundentComponent);
     }else if(option == "edit"){
       modalRef = this.modalService.open(EditStundentComponent);
+    }else if(option == "see"){
+      modalRef = this.modalService.open(StudentComponent);
     }
     if(reg != null){
       modalRef.componentInstance.reg = reg;
