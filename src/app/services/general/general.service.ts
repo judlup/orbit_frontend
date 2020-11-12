@@ -41,10 +41,10 @@ export class GeneralService {
     return observable;
   }
 
-  CONFIRM(){
+  CONFIRM(message = null){
     const observable = new Observable(observer => {
       Swal.fire({
-        title: 'Estás seguro?',
+        title: message == null ? 'Are you sure ?': message,
         // text: "You won't be able to revert this!",
         icon: 'warning',
         showCancelButton: true,

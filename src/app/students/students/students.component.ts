@@ -49,5 +49,22 @@ export class StudentsComponent implements OnInit {
     })
   }
 
+  delete(id){
+    this.generalService.CONFIRM().subscribe((response)=>{
+      if(response == true){
+        this.studentService.delete(id).subscribe(
+          (response) => {
+            this.generalService.ALERT("Student deleted successfully.",'success');
+            this.list();
+          },
+          error => {
+            this.generalService.ALERT("Error, please contact with us.","error");
+          }
+        );
+      }
+    });
+  }
+
+
 
 }

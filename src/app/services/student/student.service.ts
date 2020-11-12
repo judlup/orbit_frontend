@@ -53,7 +53,7 @@ export class StudentService {
     const headers = new HttpHeaders({
       'Content-Type' : 'application/json'
     });
-    return this.http.delete(this.url+'students?id='+id, {headers : headers});
+    return this.http.delete(this.url+'?id='+id, {headers : headers});
   }
 
 }
