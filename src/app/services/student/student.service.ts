@@ -45,7 +45,7 @@ export class StudentService {
       'Content-Type' : 'application/json'
     });
     let params = data;
-    return this.http.post(this.url, params, {headers : headers});
+    return this.http.put(this.url, params, {headers : headers});
   }
 
   delete(id): any

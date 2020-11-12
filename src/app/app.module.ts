@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StudentsComponent } from './students/students/students.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddStundentComponent } from './students/add-stundent/add-stundent.component';
+import { EditStundentComponent } from './students/edit-stundent/edit-stundent.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AddStundentComponent } from './students/add-stundent/add-stundent.compo
     NavbarComponent,
     StudentsComponent,
     AddStundentComponent,
+    EditStundentComponent,
   ],
   imports: [
     BrowserModule,

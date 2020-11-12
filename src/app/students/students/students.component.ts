@@ -1,3 +1,4 @@
+import { EditStundentComponent } from './../edit-stundent/edit-stundent.component';
 import { GeneralService } from './../../services/general/general.service';
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from 'src/app/services/student/student.service';
@@ -30,15 +31,15 @@ export class StudentsComponent implements OnInit {
     })
   }
 
-  open(option, data = null) {
+  open(option, reg = null) {
     let modalRef;
     if(option == "add"){
       modalRef = this.modalService.open(AddStundentComponent);
     }else if(option == "edit"){
-      // modalRef = this.modalService.open(EditarEmpleadoComponent);
+      modalRef = this.modalService.open(EditStundentComponent);
     }
-    if(data != null){
-      modalRef.componentInstance.data = data;
+    if(reg != null){
+      modalRef.componentInstance.reg = reg;
     }
     modalRef.componentInstance.answer.subscribe((anwser) => {
       if(anwser == 'ok'){
