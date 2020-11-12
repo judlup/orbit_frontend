@@ -1,0 +1,32 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-8 offset-2 bg">
+      <br>
+      <div>
+        <h1>Students</h1>
+        <button type="button" class="btn btn-outline-info btn-sm" (click)="open('add')"> <i class="fas fa-user-plus"></i>Add</button>
+      </div>
+      <hr>
+      <div class="scroll">
+
+      <div *ngFor="let student of students" class="students">
+        <div class="card student" >
+          <div class="card-body">
+            <h3 class="card-title text-info"><i class="fas fa-user"></i> {{student.username}} <br><small class="text-muted">{{student.firstName}} {{student.lastName}}({{student.age}})</small></h3>
+            <p class="card-text text-muted">Career {{student.career}}</p>
+          </div>
+          <div class="card-footer">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+              <button type="button" class="btn btn-outline-secondary btn-sm">Edit</button>
+              <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+      <br>
+    </div>
+  </div>
+</div>

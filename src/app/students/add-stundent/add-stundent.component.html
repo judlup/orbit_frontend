@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+      <div class="col-12">
+          <!-- Form -->
+          <form [formGroup]="frm" (ngSubmit)="add()">
+            <br>
+            <h3>Add Student</h3>
+            <hr>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" aria-describedby="username" name="username" formControlName="username" required placeholder="Username">
+            </div>
+            <div class="form-group">
+              <label for="firstname">First Name</label>
+              <input type="text" class="form-control" id="firstname" aria-describedby="firstname" name="firstname" formControlName="firstname" required placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <label for="lastname">Last Name</label>
+              <input type="text" class="form-control" id="lastname" aria-describedby="lastname" name="lastname" formControlName="lastname" required placeholder="Last Name">
+            </div>
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input type="number" class="form-control" id="age" aria-describedby="age" name="age" formControlName="age" required placeholder="age">
+            </div>
+            <div class="form-group">
+              <label for="career">Carrer</label>
+              <input type="text" class="form-control" id="career" aria-describedby="career" name="career" formControlName="career" required placeholder="Career">
+            </div>
+            <button type="submit" class="btn btn-info btn-block"  >Add</button> <!--[disabled]="frm.invalid"-->
+            <br>
+          </form>
+          <!-- Form -->
+      </div>
+  </div>
+</div>
