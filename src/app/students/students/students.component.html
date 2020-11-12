@@ -5,12 +5,18 @@
       <br>
       <div>
         <h1>Students</h1>
-        <button type="button" class="btn btn-outline-info btn-sm" (click)="open('add')"> <i class="fas fa-user-plus"></i>Add</button>
+        <div class="input-group mb-3 searchbar">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Search</span>
+          </div>
+          <input type="text" class="form-control" placeholder="Username, First Name, Last Name or Career" aria-label="search" [(ngModel)]="search">
+        </div>
+        <button type="button" class="btn btn-outline-info btn-sm btn-add" (click)="open('add')"> <i class="fas fa-user-plus"></i>Add</button>
       </div>
       <hr>
       <div class="scroll">
 
-      <div *ngFor="let student of students" class="students">
+      <div *ngFor="let student of students | filterBy : ['username','firstName', 'lastName', 'career'] : search" class="students">
         <div class="card student" >
           <div class="card-body">
             <h3 class="card-title text-info"><i class="fas fa-user"></i> {{student.username}} <br><small class="text-muted">{{student.firstName}} {{student.lastName}}({{student.age}})</small></h3>

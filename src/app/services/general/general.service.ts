@@ -13,10 +13,10 @@ export class GeneralService {
 
   static WS_URL: string =  "https://localhost:44328/api/";
 
-  ALERT(mensaje, tipo){
+  ALERT(message, type){
     Swal.fire({
-      icon: tipo,
-      title: mensaje,
+      icon: type,
+      title: message,
       showConfirmButton: false,
       timer: 2000
     })
@@ -28,7 +28,7 @@ export class GeneralService {
         title:titulo,
         input: 'text',
         showCancelButton: false,
-        confirmButtonText: 'Enviar',
+        confirmButtonText: 'Send',
         confirmButtonColor: '#3F51B5',
         showLoaderOnConfirm: true,
         allowOutsideClick: () => !Swal.isLoading()
@@ -50,7 +50,7 @@ export class GeneralService {
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Confirmar'
+        confirmButtonText: 'Confirm'
       }).then((result) => {
         if (result.value) {
           observer.next(result.value);

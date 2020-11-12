@@ -9,11 +9,13 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgPipesModule} from 'ngx-pipes';
 
 import { StudentsComponent } from './students/students/students.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddStundentComponent } from './students/add-stundent/add-stundent.component';
 import { EditStundentComponent } from './students/edit-stundent/edit-stundent.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { EditStundentComponent } from './students/edit-stundent/edit-stundent.co
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-
+    NgPipesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
